@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="skillbox.Work7_4" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-02-12T10:28:02" hostname="PC-ZAUSTINSKY" time="19.566">
+  <properties/>
+  <testcase name="task1()" classname="skillbox.Work7_4" time="13.687"/>
+  <testcase name="task2()" classname="skillbox.Work7_4" time="5.879"/>
+  <system-out><![CDATA[Без категории (0)
+Бытовая техника (10)
+Каталог (32)
+Книги (1)
+Одежда (0)
+Планшеты (3)
+Стиральные машины (5)
+Телевизоры (5)
+Телефоны (6)
+Фото/видео (4)
+Холодильники (5)
+Часы (2)
+Электроника (20)
+]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 15 - let's create a new webdriver
+[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: D:\projects\Java\selenide\build\downloads\1707733682767_139200_15
+[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+[Test worker] INFO com.codeborne.selenide.webdriver.BrowserResizer - Set browser size to 1366x768
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=firefox Version=121.0 Platform=windows
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.17.2
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.11.0 build revision: 040bc5406b
+[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 15: FirefoxDriver -> FirefoxDriver: firefox on windows (68b96ff2-e02d-40bb-bb64-e582133b8176)
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=FirefoxDriver: firefox on windows (68b96ff2-e02d-40bb-bb64-e582133b8176),proxy=null,downloadsFolder=D:\projects\Java\selenide\build\downloads\1707733682767_139200_15] in 15 [size=1]
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Add shutdown hook in 15 [size=1]
+]]></system-err>
+</testsuite>
