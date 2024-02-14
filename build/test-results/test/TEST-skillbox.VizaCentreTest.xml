@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="skillbox.VizaCentreTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-14T10:48:10" hostname="PC-ZAUSTINSKY" time="21.819">
+  <properties/>
+  <testcase name="autherizationTest()" classname="skillbox.VizaCentreTest" time="21.819"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 15 - let's create a new webdriver
+[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: D:\projects\Java\selenide\build\downloads\1707907690217_172140_15
+[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+[Test worker] INFO com.codeborne.selenide.webdriver.BrowserResizer - Set browser size to 1366x768
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=firefox Version=121.0 Platform=windows
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.17.2
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.11.0 build revision: 040bc5406b
+[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 15: FirefoxDriver -> FirefoxDriver: firefox on windows (480a126d-3cc3-4893-a648-a4db4b26aca4)
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=FirefoxDriver: firefox on windows (480a126d-3cc3-4893-a648-a4db4b26aca4),proxy=null,downloadsFolder=D:\projects\Java\selenide\build\downloads\1707907690217_172140_15] in 15 [size=1]
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Add shutdown hook in 15 [size=1]
+]]></system-err>
+</testsuite>
