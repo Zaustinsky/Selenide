@@ -2,6 +2,7 @@ package skillbox.work8_5;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -14,6 +15,7 @@ public class Registration {
     SelenideElement registerButton = $("button[name='register']");
 
     //actions
+    // @Step("регистрация пользователя")
     public void register(String username, String email, String password){
         usernameInput.setValue(username);
         emailInput.setValue(email);

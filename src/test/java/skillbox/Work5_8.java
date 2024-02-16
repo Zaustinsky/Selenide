@@ -1,15 +1,34 @@
 package skillbox;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.*;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
+
+@Epic("Тесты на страницу звонка")
+@Feature("Ввод данных и проверка работоспособности страницы")
+@DisplayName("Тест на страницу звонка")
+@TmsLink("188046")
+@Issue("issues/188046")
+@Link(url="https://skillbox.ru/course/selenide/", name = "Курс Selenide")
 public class Work5_8 {
 
+    @BeforeAll
+    @DisplayName("Инициализируем плагин Allure-Selenide")
+    static void init(){
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
+
     @Test
+    @DisplayName("Тест на страницу звонка")
     public void task1(){
 
         //1. Напишите тест на страницу заказа звонка:
@@ -25,6 +44,7 @@ public class Work5_8 {
     }
 
     @Test
+    @DisplayName("Тест на страницу ввода анкетных данных")
     public void task2() {
 
         //2. Напишите тест на страницу:
@@ -61,6 +81,7 @@ public class Work5_8 {
     }
 
     @Test
+    @DisplayName("Тест на страницу языковой школы")
     public void task3(){
 
         //3. Выполните задание по желанию. Напишите тест на страницу языковой школы:

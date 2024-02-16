@@ -1,37 +1,49 @@
 package skillbox;
 
-import org.junit.jupiter.api.Test;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.*;
+import io.qameta.allure.selenide.AllureSelenide;
+import jdk.jfr.Description;
+import org.junit.jupiter.api.*;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 import com.codeborne.selenide.*;
-import com.codeborne.selenide.conditions.Text;
-import org.junit.jupiter.api.Assumptions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import skillbox.work8_5.*;
-
-import java.util.Calendar;
-import java.util.List;
-import java.util.function.Predicate;
 
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
+@Epic("Поиск и покупка")
+@Feature("Покупка")
+@Story("Покупка стиральных машин")
+@DisplayName("Купить стиральную машину")
 public class Work8_5withPageObject {
 
     @BeforeAll
+    @DisplayName("Инициализируем плагин Allure-Selenide")
+    static void init(){
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
     public static void setupBrowser() {
         Configuration.browser = "firefox";
     }
 
+
     @Test
-    public void buyWashingMachineTest(){
-
+    @DisplayName("Покупка стиральной машины")
+    @Description(value = """
+            1. Зарегистрировать нового пользователя
+            2. Искать товар и положить в корзину
+            3. Проверить, что товар в корзине""")
+    public void buyWashingMachineTest() throws IOException {
         setupBrowser();
-
         open("http://intershop2.skillbox.ru/register");
         //генерация нового пользователя
         var username = "sel" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("MMhhHHmmss"));
@@ -43,6 +55,7 @@ public class Work8_5withPageObject {
         new Basket().basketItems.shouldHave(size(1));
         new Basket().firstArticleName.shouldHave(text("Стиральная машина"));
         new Basket().firstArticleQuantity.shouldHave(exactValue("1"));
+
         new Total().totalAmount.shouldHave(exactText("22990,00₽"));
 
         // 3. Продолжите тест из практики последнего видеоурока модуля, расширив сценарий.
@@ -67,5 +80,15 @@ public class Work8_5withPageObject {
         new Result().resultPaymentMethod.shouldHave(text("Оплата при доставке"));
 
         sleep(5000);
+    }
+
+    @Attachment(value = "Содержимое корзины", fileExtension = "txt")
+    String basket(String contents){
+        return contents;
+    }
+
+    @Attachment(value = "Первый найденный товар", fileExtension = "png")
+    void doScreenshot(SelenideElement element) throws IOException {
+        Files.readAllBytes(element.screenshot().toPath());
     }
 }

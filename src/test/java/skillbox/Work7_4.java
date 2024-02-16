@@ -1,6 +1,11 @@
 package skillbox;
 import com.codeborne.selenide.*;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -10,14 +15,23 @@ import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
+
+@Epic("Тесты на каталог на сайте интернет-магазина")
+@Feature("Каталоги книг и стиральных машин")
+@DisplayName("Тесты для каталогов книг и стиральных машин")
 public class Work7_4 {
 
     @BeforeAll
+    @DisplayName("Инициализируем плагин Allure-Selenide")
+    static void init(){
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
     public static void setupBrowser() {
         Configuration.browser = "firefox";
     }
 
     @Test
+    @DisplayName("Тесты для каталога книг на сайте интернет-магазина")
     public void task1() {
 
         //1. Напишите тесты для каталога книг на сайте интернет-магазина. Проверьте следующее:
@@ -49,6 +63,7 @@ public class Work7_4 {
     }
 
     @Test
+    @DisplayName("Тест на страницу каталога стиральных машин в интернет-магазине")
     public void task2() {
 
         //2. (Необязательное усложнённое задание.) Напишите тест на страницу каталога стиральных машин в интернет-магазине,

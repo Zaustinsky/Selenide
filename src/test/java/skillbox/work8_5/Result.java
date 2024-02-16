@@ -1,6 +1,7 @@
 package skillbox.work8_5;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Attachment;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -14,6 +15,9 @@ public class Result {
     public SelenideElement resultTown = $(".woocommerce-customer-details address");
     public SelenideElement resultTotal = $(".woocommerce-Price-amount.amount");
     public SelenideElement resultPaymentMethod = $("tfoot tr:nth-of-type(2) td");
+
+
+
 
 
 

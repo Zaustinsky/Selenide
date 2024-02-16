@@ -2,6 +2,7 @@ package skillbox.work8_5;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -28,7 +29,7 @@ public class Ordering {
 
 
     // actions
-
+    //@Step("ввод анкетных данных пользователя {firstName}")
     public void addOrderingList(String firstName, String lastName, String street, String town,
                                 String state, String postcode, String phoneNumber, String comments){
 

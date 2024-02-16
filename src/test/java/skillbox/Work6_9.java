@@ -1,7 +1,12 @@
 package skillbox;
 
 import com.codeborne.selenide.*;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -10,15 +15,22 @@ import static com.codeborne.selenide.Condition.attribute;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-
+@Epic("Реализация проверок на сайте интернет-магазина")
+@Feature("Проверки на видимость и текстовое содержание")
+@DisplayName("Тест с проверками для сайта интернет-магазина")
 public class Work6_9 {
 
     @BeforeAll
+    @DisplayName("Инициализируем плагин Allure-Selenide")
+    static void init(){
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
     public static void setupBrowser() {
         Configuration.browser = "firefox";
     }
 
     @Test
+    @DisplayName("Тест с проверками для сайта интернет-магазина")
     public void task1() {
 
         //1. Напишите тесты с проверками для сайта интернет-магазина:
@@ -60,6 +72,7 @@ public class Work6_9 {
 
 
     @Test
+    @DisplayName("Тест с проверками для интернет-магазина на видимость товаров")
     public void task3() {
         //3. Напишите тесты с проверками для сайта интернет-магазина:
 

@@ -1,19 +1,41 @@
 package skillbox;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.*;
 
+
+@Epic("Тесты для раздела Мой аккаунт")
+@Feature("Проверка видимости и возможности переходов на странице")
+@DisplayName("Проверки переходов по разделам меню")
 public class IntershopTestWork3_9 {
+
+    @BeforeAll
+    @DisplayName("Инициализируем плагин Allure-Selenide")
+    static void init(){
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
+    public static void setupBrowser() {
+        Configuration.browser = "firefox";
+    }
 
     //Задание 1. Тест на верность заголовков
     @Test
+    @DisplayName("Проверка видимости элемента 'Мой аккаунт'")
     void intershopTestTitles(){
         //arrange
-        open("https://intershop2.skillbox.ru/");
+        setupBrowser();
+        open("http://intershop2.skillbox.ru/");
         $(Selectors.byText("Мой аккаунт")).click();
         $(Selectors.byClassName("post-title")).shouldHave(Condition.visible);
 //        $(Selectors.byClassName("custom-register-button")).click();
@@ -23,9 +45,11 @@ public class IntershopTestWork3_9 {
 
     //Задание 2. Тест на работоспособность переходов
     @Test
+    @DisplayName("Проверка работоспособности переходов пунктов меню")
     void intershopTestTransitions(){
         //arrange
-        open("https://intershop2.skillbox.ru/");
+        setupBrowser();
+        open("http://intershop2.skillbox.ru/");
         $(Selectors.byText("Мой аккаунт")).click();
         $(Selectors.byClassName("post-title")).shouldHave(Condition.visible);
         //переход на вкладку "Корзина"
@@ -41,9 +65,11 @@ public class IntershopTestWork3_9 {
 
     //Задание 4. Практика работы с невидимыми элементами
     @Test
+    @DisplayName("Проверка наличия невидимого элемента с id=finish на содежрание внутри текста «Телефон»")
     void unvisibleElementsTest(){
         //arrange
-        open("https://lm.skillbox.cc/qa_tester/module07/homework1/");
+        setupBrowser();
+        open("http://lm.skillbox.cc/qa_tester/module07/homework1/");
         //проверка невидимого элемента с id=finish на содежрание внутри текста «Телефон»
      // $(Selectors.byCssSelector("#finish")).shouldHave(Condition.text("Телефон")).shouldHave(Condition.visible);
         //проверка элемента с id=page_1 на содежрание внутри текста «Телефон»

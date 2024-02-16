@@ -1,0 +1,1 @@
+{"uuid":"99b460de-6f73-469d-b09d-7f83591e36ca","name":"Тест для проверки работоспособности поисковой строки","children":["dab63589-c795-4767-b9ec-0bcb7a247090"],"befores":[{"name":"init","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1708004617945,"stop":1708004617956}],"afters":[],"start":1708004617892,"stop":1708004626870}

@@ -1,20 +1,42 @@
 package skillbox;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
+
+@Epic("Локаторы для сайта интернет-магазина")
+@Feature("Наличие локаторов и проверка на видимость")
+@DisplayName("Проверка локаторов для страницы интернет-магазина")
 public class PageObjectForWork4_7 {
 
+    @BeforeAll
+    @DisplayName("Инициализируем плагин Allure-Selenide")
+    static void init(){
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
+    public static void setupBrowser() {
+        Configuration.browser = "firefox";
+    }
+
     @Test
+    @DisplayName("проверка локаторов для страницы интернет-магазина")
     public void LocatorsForTask1() {
 
         //1. Напишите локаторы для элементов на странице интернет-магазина. Заканчивайте поиск командой проверки на видимость (shouldBe(visible)).
 
-        open("https://intershop2.skillbox.ru/");
+        setupBrowser();
+        open("http://intershop2.skillbox.ru/");
         // По тегу: Footer (нижняя часть сайта).
         $("footer").shouldBe(Condition.visible);
         // По id: главное меню.
@@ -28,11 +50,13 @@ public class PageObjectForWork4_7 {
     }
 
     @Test
+    @DisplayName("Проверка видимости локаторов для учебной страницы http://qajava.skillbox.ru/")
     public void LocatorsForTask2() {
 
         //2. Напишите локаторы для элементов на учебной странице http://qajava.skillbox.ru/. Заканчивайте поиск командой проверки на видимость (shouldBe(visible)).
 
-        open("https://qajava.skillbox.ru/");
+        setupBrowser();
+        open("http://qajava.skillbox.ru/");
         //По атрибуту со значением: элемент футера «О магазине».
         $("[test-info=about-us]").shouldHave(Condition.text("О магазине")).shouldBe(Condition.visible);
         //По тексту: меню пункта «Бестселлеры».
@@ -51,11 +75,13 @@ public class PageObjectForWork4_7 {
     }
 
     @Test
+    @DisplayName("нахождение локаторов с помощью XPATH")
     public void LocatorsForTask3() {
 
         //3. Задание по желанию на составление XPath:
 
-        open("https://qajava.skillbox.ru/module04/lesson2/");
+        setupBrowser();
+        open("http://qajava.skillbox.ru/module04/lesson2/");
         //Напишите XPath-локатор для элемента с тегом button, id=write-to-me и текстом «Напишите мне» на странице Отдам котят.
         //Заканчивайте поиск командой проверки на видимость (shouldBe(visible)).
         $x("//button[@id='write-to-me']").shouldBe(Condition.visible);

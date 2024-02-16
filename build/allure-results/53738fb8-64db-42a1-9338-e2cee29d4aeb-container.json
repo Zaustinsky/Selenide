@@ -1,0 +1,1 @@
+{"uuid":"53738fb8-64db-42a1-9338-e2cee29d4aeb","name":"Купить стиральную машину","children":["11287c68-98ce-48a1-be90-f358f2d4b04b"],"befores":[{"name":"init","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1708079350917,"stop":1708079350931}],"afters":[],"start":1708079350874,"stop":1708079361011}
