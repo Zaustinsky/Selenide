@@ -1,0 +1,1 @@
+{"uuid":"6dcf1b43-759a-4bfe-9f67-f103f6c2fe87","name":"VizaCentreTest","children":["afc121c9-9c4a-438f-81f9-8e21d68bc711"],"befores":[{"name":"setupBrowser","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1708085272243,"stop":1708085272268}],"afters":[],"start":1708085272188,"stop":1708085319016}

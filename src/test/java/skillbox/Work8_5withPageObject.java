@@ -10,10 +10,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Map;
 import java.util.Objects;
 
 import com.codeborne.selenide.*;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import skillbox.work8_5.*;
 
 import static com.codeborne.selenide.CollectionCondition.*;
@@ -30,7 +32,22 @@ public class Work8_5withPageObject {
     @DisplayName("Инициализируем плагин Allure-Selenide")
     static void init(){
         SelenideLogger.addListener("allure", new AllureSelenide());
+
+        //подключение сервера Selenoid для запуска тестов на удаленном компьютере
+        Configuration.remote="http://85.119.145.3:4444/wd/hub";
+        Configuration.browser="firefox";
+        Configuration.browserVersion="93.0";
+//        Configuration.remote="http://selenoid-scaled:selenoid-pwd@68.183.210.216:5555/wd/hub";
+        //Configuration.browser="chrome";
+
+
+        //задание опций Selenoid для возможности записи и просмотра видео запускаемых тестов
+        var caps = new DesiredCapabilities();
+        var options = Map.of("enableVnc", true, "enableVideo", true);
+        caps.setCapability("selenoid:options", options);
+        Configuration.browserCapabilities = caps;
     }
+
     public static void setupBrowser() {
         Configuration.browser = "firefox";
     }
