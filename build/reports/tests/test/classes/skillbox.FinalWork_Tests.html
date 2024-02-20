@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">3</div>
+<div class="counter">4</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">48.031s</div>
+<div class="counter">1m0.39s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="percent">25%</div>
 <p>successful</p>
 </div>
 </td>
@@ -78,8 +78,8 @@
 <span class="code">
 <pre>Element not found {button.custom-register-button}
 Expected: exist
-Screenshot: file:/D:/projects/Java/selenide/build/reports/tests/1708440474150.2.png
-Page source: file:/D:/projects/Java/selenide/build/reports/tests/1708440474150.2.html
+Screenshot: file:/D:/projects/Java/selenide/build/reports/tests/1708440927571.2.png
+Page source: file:/D:/projects/Java/selenide/build/reports/tests/1708440927571.2.html
 Timeout: 4 s.
 Caused by: NoSuchElementException: Unable to locate element: button.custom-register-button
 	at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:91)
@@ -97,9 +97,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
 Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Command: [0c899440-a3f9-4a35-b4e0-d522b311bbe7, findElement {using=css selector, value=button.custom-register-button}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 93.0, moz:accessibilityChecks: false, moz:buildID: 20210927210923, moz:debuggerAddress: localhost:36759, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 86, moz:profile: /tmp/rust_mozprofileqpNODJ, moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platformName: linux, platformVersion: 5.4.0-81-generic, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
-Session ID: 0c899440-a3f9-4a35-b4e0-d522b311bbe7
+Command: [da37f909-23aa-43d0-8d48-020720c5f8cb, findElement {using=css selector, value=button.custom-register-button}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 93.0, moz:accessibilityChecks: false, moz:buildID: 20210927210923, moz:debuggerAddress: localhost:40541, moz:geckodriverVersion: 0.29.1, moz:headless: false, moz:processID: 85, moz:profile: /tmp/rust_mozprofileHIs78p, moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platformName: linux, platformVersion: 5.4.0-81-generic, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
+Session ID: da37f909-23aa-43d0-8d48-020720c5f8cb
 	at jdk.internal.reflect.GeneratedConstructorAccessor11.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
@@ -132,8 +132,8 @@ Session ID: 0c899440-a3f9-4a35-b4e0-d522b311bbe7
 <pre>Element should have text &quot;450,00&quot; {.order-total bdi}
 Element: '&lt;bdi&gt;810,00₽&lt;/bdi&gt;'
 Actual value: text=&quot;810,00₽&quot;
-Screenshot: file:/D:/projects/Java/selenide/build/reports/tests/1708440462659.1.png
-Page source: file:/D:/projects/Java/selenide/build/reports/tests/1708440462659.1.html
+Screenshot: file:/D:/projects/Java/selenide/build/reports/tests/1708440916914.1.png
+Page source: file:/D:/projects/Java/selenide/build/reports/tests/1708440916914.1.html
 Timeout: 4 s.
 	at com.codeborne.selenide.impl.WebElementSource.handleError(WebElementSource.java:149)
 	at com.codeborne.selenide.impl.WebElementSource.checkConditionAndReturnElement(WebElementSource.java:127)
@@ -158,8 +158,8 @@ Timeout: 4 s.
 <pre>Element should not have text &quot;45,00₽&quot; {.cart-discount.coupon-givemehalyava .woocommerce-Price-amount.amount}
 Element: '&lt;span class=&quot;woocommerce-Price-amount amount&quot;&gt;45,00₽&lt;/span&gt;'
 Actual value: text=&quot;45,00₽&quot;
-Screenshot: file:/D:/projects/Java/selenide/build/reports/tests/1708440454190.0.png
-Page source: file:/D:/projects/Java/selenide/build/reports/tests/1708440454190.0.html
+Screenshot: file:/D:/projects/Java/selenide/build/reports/tests/1708440908942.0.png
+Page source: file:/D:/projects/Java/selenide/build/reports/tests/1708440908942.0.html
 Timeout: 4 s.
 	at com.codeborne.selenide.impl.WebElementSource.handleError(WebElementSource.java:146)
 	at com.codeborne.selenide.impl.WebElementSource.checkConditionAndReturnElement(WebElementSource.java:127)
@@ -193,19 +193,25 @@ Timeout: 4 s.
 <tr>
 <td class="failures">Добавление заказа в корзину, с последующей регистрацией пользователя</td>
 <td class="failures">orderingPizza()</td>
-<td class="failures">11.093s</td>
+<td class="failures">10.615s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Фича проверки ввода некорректных данных по скидке</td>
 <td class="failures">useIncorrectSaleCoupon()</td>
-<td class="failures">8.559s</td>
+<td class="failures">7.587s</td>
 <td class="failures">failed</td>
+</tr>
+<tr>
+<td class="success">Фича проверки работоспособности скидки на сайте</td>
+<td class="success">useSaleCoupon()</td>
+<td class="success">16.415s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">Фича проверки ввода данных скидочного купона несколько раз</td>
 <td class="failures">useSaleCouponMoreThanOnce()</td>
-<td class="failures">28.379s</td>
+<td class="failures">25.775s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -218,9 +224,19 @@ Timeout: 4 s.
 [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=firefox Version=93.0 Platform=linux
 [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.17.2
 [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.11.0 build revision: 040bc5406b
-[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 15: RemoteWebDriver -&gt; RemoteWebDriver: firefox on linux (0c899440-a3f9-4a35-b4e0-d522b311bbe7)
-[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=RemoteWebDriver: firefox on linux (0c899440-a3f9-4a35-b4e0-d522b311bbe7),proxy=null,downloadsFolder=null] in 15 [size=1]
+[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 15: RemoteWebDriver -&gt; RemoteWebDriver: firefox on linux (937ccbdc-fe29-472b-a2c6-7320e2d697d2)
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=RemoteWebDriver: firefox on linux (937ccbdc-fe29-472b-a2c6-7320e2d697d2),proxy=null,downloadsFolder=null] in 15 [size=1]
 [Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Add shutdown hook in 15 [size=1]
+[Test worker] INFO com.codeborne.selenide.drivercommands.CloseDriverCommand - Close webdriver: 15 -&gt; RemoteWebDriver: firefox on linux (937ccbdc-fe29-472b-a2c6-7320e2d697d2)...
+[Test worker] INFO com.codeborne.selenide.drivercommands.CloseDriverCommand - Closed webdriver 15 in 839 ms
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Unregister WebDriverInstance[config=StaticConfig,webDriver=RemoteWebDriver: firefox on linux (null),proxy=null,downloadsFolder=null] in 15 [size=0]
+[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 15 - let's create a new webdriver
+[Test worker] INFO com.codeborne.selenide.webdriver.BrowserResizer - Set browser size to 1366x768
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=firefox Version=93.0 Platform=linux
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.17.2
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.11.0 build revision: 040bc5406b
+[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 15: RemoteWebDriver -&gt; RemoteWebDriver: firefox on linux (da37f909-23aa-43d0-8d48-020720c5f8cb)
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=RemoteWebDriver: firefox on linux (da37f909-23aa-43d0-8d48-020720c5f8cb),proxy=null,downloadsFolder=null] in 15 [size=1]
 </pre>
 </span>
 </div>
@@ -232,7 +248,7 @@ Timeout: 4 s.
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.1.1</a> at 20 февр. 2024 г., 17:47:56</p>
+<a href="http://www.gradle.org">Gradle 7.1.1</a> at 20 февр. 2024 г., 17:55:29</p>
 </div>
 </div>
 </body>

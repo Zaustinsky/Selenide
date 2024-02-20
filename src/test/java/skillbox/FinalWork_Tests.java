@@ -58,7 +58,7 @@ public class FinalWork_Tests {
             4. Проверить, что товар в корзине
             5. Оформить заказ
             6. Проверить данные заказа""")
-        void orderingPizza() {
+        public void orderingPizza() {
 
            //arrange
            setupBrowser();
@@ -113,7 +113,7 @@ public class FinalWork_Tests {
             1. Искать товар и положить в корзину
             2. Перейти в корзину и ввести данные скидочного купона
             3. Убедиться, что общая сумма уменьшилась на 10%""")
-    void useSaleCoupon() {
+    public void useSaleCoupon() {
 
         //arrange
         setupBrowser();
@@ -138,7 +138,7 @@ public class FinalWork_Tests {
             1. Искать товар и положить в корзину
             2. Перейти в корзину и ввести некорректные данные по скидочному купону 
             3. Убедиться, что высветилось сообщение об ошибке и сумма заказа не изменилась""")
-    void useIncorrectSaleCoupon() {
+    public void useIncorrectSaleCoupon() {
 
         //arrange
         setupBrowser();
@@ -171,7 +171,7 @@ public class FinalWork_Tests {
             3. Сделать первый заказ с промокодом GIVEMEHALYAVA на странице «Акции» 
             4. Сделать второй заказ с этим же промокодом
             5. Проверить, что промокод второй раз не сработал""")
-    void useSaleCouponMoreThanOnce() {
+    public void useSaleCouponMoreThanOnce() {
 
         //arrange
         setupBrowser();
