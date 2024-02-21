@@ -17,8 +17,7 @@ public class MainPage {
     public SelenideElement action = $("#menu-primary-menu #menu-item-396");
     public SelenideElement quitFromAccount = $(".account");
 
-
-    @Step
+    
     public void setSearch(String name){
         search.setValue(name);
     }

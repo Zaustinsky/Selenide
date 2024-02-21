@@ -23,13 +23,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">4</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">4</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">6.228s</div>
+<div class="counter">9.278s</div>
 <p>duration</p>
 </div>
 </td>
@@ -97,6 +97,81 @@ Exception Details:
 </pre>
 </span>
 </div>
+<div class="test">
+<a name="useIncorrectSaleCoupon()"></a>
+<h3 class="failures">Фича проверки ввода некорректных данных по скидке</h3>
+<span class="code">
+<pre>java.lang.VerifyError: Expecting a stackmap frame at branch target 33
+Exception Details:
+  Location:
+    skillbox/finalWork/MainPage.setSearch(Ljava/lang/String;)V @12: invokestatic
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: 2b4e b200 532a 2a2d b800 594d b800 5f2c
+    0000010: b600 632a b400 1c2b b900 3d02 0057 a700
+    0000020: 103a 04b8 005f 1904 b600 6719 04bf b800
+    0000030: 5fb6 006a b1                           
+  Exception Handler Table:
+    bci [12, 33] =&gt; handler: 33
+
+	at skillbox.FinalWork_Tests.useIncorrectSaleCoupon(FinalWork_Tests.java:153)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="useSaleCoupon()"></a>
+<h3 class="failures">Фича проверки работоспособности скидки на сайте</h3>
+<span class="code">
+<pre>java.lang.VerifyError: Expecting a stackmap frame at branch target 33
+Exception Details:
+  Location:
+    skillbox/finalWork/MainPage.setSearch(Ljava/lang/String;)V @12: invokestatic
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: 2b4e b200 532a 2a2d b800 594d b800 5f2c
+    0000010: b600 632a b400 1c2b b900 3d02 0057 a700
+    0000020: 103a 04b8 005f 1904 b600 6719 04bf b800
+    0000030: 5fb6 006a b1                           
+  Exception Handler Table:
+    bci [12, 33] =&gt; handler: 33
+
+	at skillbox.FinalWork_Tests.useSaleCoupon(FinalWork_Tests.java:127)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="useSaleCouponMoreThanOnce()"></a>
+<h3 class="failures">Фича проверки ввода данных скидочного купона несколько раз</h3>
+<span class="code">
+<pre>java.lang.VerifyError: Expecting a stackmap frame at branch target 33
+Exception Details:
+  Location:
+    skillbox/finalWork/MainPage.setSearch(Ljava/lang/String;)V @12: invokestatic
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: 2b4e b200 532a 2a2d b800 594d b800 5f2c
+    0000010: b600 632a b400 1c2b b900 3d02 0057 a700
+    0000020: 103a 04b8 005f 1904 b600 6719 04bf b800
+    0000030: 5fb6 006a b1                           
+  Exception Handler Table:
+    bci [12, 33] =&gt; handler: 33
+
+	at skillbox.FinalWork_Tests.useSaleCouponMoreThanOnce(FinalWork_Tests.java:187)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+</pre>
+</span>
+</div>
 </div>
 <div id="tab1" class="tab">
 <h2>Tests</h2>
@@ -112,7 +187,25 @@ Exception Details:
 <tr>
 <td class="failures">Добавление заказа в корзину, с последующей регистрацией пользователя</td>
 <td class="failures">orderingPizza()</td>
-<td class="failures">6.228s</td>
+<td class="failures">0.756s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">Фича проверки ввода некорректных данных по скидке</td>
+<td class="failures">useIncorrectSaleCoupon()</td>
+<td class="failures">0.644s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">Фича проверки работоспособности скидки на сайте</td>
+<td class="failures">useSaleCoupon()</td>
+<td class="failures">7.308s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">Фича проверки ввода данных скидочного купона несколько раз</td>
+<td class="failures">useSaleCouponMoreThanOnce()</td>
+<td class="failures">0.570s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -121,15 +214,12 @@ Exception Details:
 <h2>Standard error</h2>
 <span class="code">
 <pre>[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 15 - let's create a new webdriver
-[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: D:\projects\Java\selenide\build\downloads\1708512374632_27684_15
-[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
-[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
 [Test worker] INFO com.codeborne.selenide.webdriver.BrowserResizer - Set browser size to 1366x768
-[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=firefox Version=122.0.1 Platform=windows
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=firefox Version=93.0 Platform=linux
 [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.17.2
 [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.11.0 build revision: 040bc5406b
-[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 15: FirefoxDriver -&gt; FirefoxDriver: firefox on windows (85d63460-e6bc-450c-9e71-c5566caa0452)
-[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=FirefoxDriver: firefox on windows (85d63460-e6bc-450c-9e71-c5566caa0452),proxy=null,downloadsFolder=D:\projects\Java\selenide\build\downloads\1708512374632_27684_15] in 15 [size=1]
+[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 15: RemoteWebDriver -&gt; RemoteWebDriver: firefox on linux (e3ece6c0-0a90-46dc-ba17-8fa0d778d5de)
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=RemoteWebDriver: firefox on linux (e3ece6c0-0a90-46dc-ba17-8fa0d778d5de),proxy=null,downloadsFolder=null] in 15 [size=1]
 [Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Add shutdown hook in 15 [size=1]
 AspectJ Internal Error: unable to add stackmap attributes. Unsupported class file major version 60
 </pre>
@@ -143,7 +233,7 @@ AspectJ Internal Error: unable to add stackmap attributes. Unsupported class fil
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.1.1</a> at 21 февр. 2024 г., 13:46:23</p>
+<a href="http://www.gradle.org">Gradle 7.1.1</a> at 21 февр. 2024 г., 13:52:21</p>
 </div>
 </div>
 </body>
