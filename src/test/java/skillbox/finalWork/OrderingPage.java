@@ -1,7 +1,10 @@
 package skillbox.finalWork;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Attachment;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.Date;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -57,4 +60,5 @@ public class OrderingPage {
         checkBoxInput.click();
         checkoutButton.click();
     }
+
 }

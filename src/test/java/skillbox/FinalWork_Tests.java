@@ -6,7 +6,6 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import com.sun.tools.javac.Main;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
-import jdk.jfr.Description;
 import org.junit.FixMethodOrder;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -16,6 +15,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import skillbox.finalWork.*;
 import skillbox.work8_5.Registration;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
@@ -35,9 +37,9 @@ public class FinalWork_Tests {
     static void init(){
         SelenideLogger.addListener("allure", new AllureSelenide());
         //подключение сервера Selenoid для запуска тестов на удаленном компьютере
-        Configuration.remote="http://85.119.145.3:4444/wd/hub";
-        Configuration.browser="firefox";
-        Configuration.browserVersion="93.0";
+//        Configuration.remote="http://85.119.145.3:4444/wd/hub";
+//        Configuration.browser="firefox";
+//        Configuration.browserVersion="93.0";
 
         //задание опций Selenoid для возможности записи и просмотра видео запускаемых тестов
         var caps = new DesiredCapabilities();
@@ -51,7 +53,7 @@ public class FinalWork_Tests {
 
         @Test
         @DisplayName("Добавление заказа в корзину, с последующей регистрацией пользователя")
-        @Description(value = """
+        @io.qameta.allure.Description(value = """
             1. Искать товар и положить в корзину
             2. Добавить еще по одной позиции к каждому пункту заказа
             3. Зарегистрировать нового пользователя
@@ -63,6 +65,7 @@ public class FinalWork_Tests {
            //arrange
            setupBrowser();
            open("http://pizzeria.skillbox.cc/"); //переход на страницу сайта
+           clearBrowserCookies();
 
            //act
            new MainPage().menu.shouldHave(Condition.visible).hover();
@@ -109,7 +112,7 @@ public class FinalWork_Tests {
 
     @Test
     @DisplayName("Фича проверки работоспособности скидки на сайте")
-    @Description(value = """
+    @io.qameta.allure.Description(value = """
             1. Искать товар и положить в корзину
             2. Перейти в корзину и ввести данные скидочного купона
             3. Убедиться, что общая сумма уменьшилась на 10%""")
@@ -118,6 +121,7 @@ public class FinalWork_Tests {
         //arrange
         setupBrowser();
         open("http://pizzeria.skillbox.cc/"); //переход на страницу сайта
+        clearBrowserCookies();
 
         //act
         new MainPage().menu.shouldHave(Condition.visible).hover();
@@ -134,7 +138,7 @@ public class FinalWork_Tests {
 
     @Test
     @DisplayName("Фича проверки ввода некорректных данных по скидке")
-    @Description(value = """
+    @io.qameta.allure.Description(value = """
             1. Искать товар и положить в корзину
             2. Перейти в корзину и ввести некорректные данные по скидочному купону 
             3. Убедиться, что высветилось сообщение об ошибке и сумма заказа не изменилась""")
@@ -143,6 +147,7 @@ public class FinalWork_Tests {
         //arrange
         setupBrowser();
         open("http://pizzeria.skillbox.cc/"); //переход на страницу сайта
+        clearBrowserCookies();
 
         //act
         new MainPage().menu.shouldHave(Condition.visible).hover();
@@ -152,7 +157,7 @@ public class FinalWork_Tests {
         new BasketPage().addSaleCoupon("NOCOUPON");
         new BasketPage().errorMessage.shouldBe(Condition.visible).shouldHave(Condition.text("Неверный купон."));
         new BasketPage().totalSumm.shouldHave(Condition.visible).shouldHave(Condition.text("450,00"));
-        new MainPage().quitFromAccount.click();
+//        new MainPage().quitFromAccount.click();
 
 
         sleep(5000);
@@ -165,10 +170,10 @@ public class FinalWork_Tests {
     @TmsLink("188046")
     @Issue("issues/188046")
     @Link(url="http://pizzeria.skillbox.cc/checkout/", name = "Сайт по заказу пиццы")
-    @Description(value = """
+    @io.qameta.allure.Description(value = """
             1. Перейти в меню "Акции" и проверить наличие скидочного купона
             2. Создать нового пользователя
-            3. Сделать первый заказ с промокодом GIVEMEHALYAVA на странице «Акции» 
+            3. Сделать первый заказ с промокодом GIVEMEHALYAVA на странице «Акции»
             4. Сделать второй заказ с этим же промокодом
             5. Проверить, что промокод второй раз не сработал""")
     public void useSaleCouponMoreThanOnce() {
@@ -176,6 +181,7 @@ public class FinalWork_Tests {
         //arrange
         setupBrowser();
         open("http://pizzeria.skillbox.cc/"); //переход на страницу сайта
+        clearBrowserCookies();
 
         //act
         new MainPage().action.click();
@@ -211,5 +217,7 @@ public class FinalWork_Tests {
 
         sleep(5000);
         closeWebDriver();
+
     }
+
 }

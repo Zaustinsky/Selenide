@@ -1,1 +1,0 @@
-{"uuid":"009c3083-d404-4fd5-8092-b026952cca03","name":"Создание заметок для календаря","children":["7201eae3-0f70-447a-9117-cd21df51ff80"],"befores":[{"name":"init","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1708070868914,"stop":1708070868929}],"afters":[],"start":1708070868829,"stop":1708070884713}
